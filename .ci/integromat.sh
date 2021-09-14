@@ -7,6 +7,9 @@ if [ ! -f ${BASEDIR}/ci-normalize-envvars/ci-env.sh ]; then
 fi
 . ${BASEDIR}/ci-normalize-envvars/ci-env.sh
 
+# DATE=$(TZ="Asia/Tokyo" date)
+DATE=$(date -u)
+
 curl \
   -H "Content-Type: application/json" \
   -X POST \
