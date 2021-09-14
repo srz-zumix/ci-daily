@@ -3,7 +3,7 @@ set -eu
 BASEDIR=$(dirname $0)
 
 if [ ! -f ${BASEDIR}/ci-normalize-envvars/ci-env.sh ]; then
-    git clone https://github.com/srz-zumix/ci-normalize-envvars.git
+    git clone https://github.com/srz-zumix/ci-normalize-envvars.git ${BASEDIR}/ci-normalize-envvars
 fi
 . ${BASEDIR}/ci-normalize-envvars/ci-env.sh
 
