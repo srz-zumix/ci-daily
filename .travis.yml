@@ -1,4 +1,7 @@
 dist: focal
 language: python
 script:
-  - "./.ci/integromat.sh"
+- "./.ci/integromat.sh"
+env:
+  global:
+    secure: oNYNEKPoczE8OPQWSnJCAyqWYGDXUfYqf7NJ8QG+SIb7DcGsDSyoPKL10xkMD335kGahtPY76EioiIBAfyc0gI+ofMKAs5V8kIb+Qmxwuvk860EOJnS4CdCqWNYWrJ6ptuH0+ntOb4claQkdGNgIKxNAYzNiVKtVGXIRv+ClB2KQsflcZhoUK3GHzDJOhs+AvpLgTaKsjuX8FAQhWjr8OwGyquVxfbwy8HZunOFIcZzitRgJ0hcgaT55sBnK6rUzgorhEmPNU4TfZYirIzMbJM2mRTQK3mfV50MiixfcMDkbbZ/dzXXm15eEYE5Nh6VWzAuG2/uN1SBEleOdVGQ9x1mXo12OCABInoAig3gYl3s1j/Keu6/x+es3p7/OaqXkM9Z+ai4MsCogVDwYoUIwtiRaUr8BEItsLPw/stOXGHY5xlaFGFYRhm+7pxaiSn8s7yEcoWhNqjHjjJtviP+i+EuWzC4L5u8CcDpt5D5TtvZYigcUeAcplMkfggnnTF7qhr9RvKdtyReelbpk8xsZmgGmX51gP9LgZnlBO0fHRvv9YGdwxoTdkiSOTureNzqNgLWuXoQZlEt8dWhetJFgjD0TbV4uK9g0NeJbNrQ+5+WHHziE2gwVsa25twI5eQkyUqLW+acUdp4c7PLuaUqzUkX3Z/DLw1NbOaFdQKWzxog=
