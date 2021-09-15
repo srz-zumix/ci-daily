@@ -1,0 +1,7 @@
+dist: focal
+language: python
+script:
+- "./.ci/integromat.sh"
+env:
+  global:
+  - secure: Hk3uSoxL1/zXp5aHSzuLkD8o7gt22xYPye1zj+A60S1SvQ9XdQu2GvWaz4zECvpY7LfZ6cpaLgQzuUld6p1/OtkfY/OXSRJkU4DINxULGkj23aCNT1lMlFWOU51pWedPmjBy1uTbSrvdF4fbb5iOmdq7+L7MFr7D/+OZA/jolvV6+o3L0h5Uy90X9jVJpUL5V4gq96qfhFdF08dsoVteatW2GRrywA0pVoWjFtmiLzM02qaYUGS4Bgbx/xZ+yYwoV9w/MGEncxh+oITx2rgcMztSObWAIfLHQJfyDwBJlHxYluto18/ZWv5XFq06StpYQPJapfZ2LdToxKpZ7FAKpetAFhWbnDpyTJw+9f5sOvpoLBO/ozYmHR6fo80v/KtsXELigar3p+5T91CU0mlg/SNE0xU6onsttKQmKAzbLwmkrIu6x/Cl2vCLKHZ9SoHta3zgsZO7JeBBz4UVfxEUczeqI3wqRq6ZogYCawu3TiY9IizZZnV1vJXlXpcJwEP/DR+XIqUeybiLDTb/xfJ2GOSQ55Y3DqCaSFSdTgI4L63HjK+DtnU9nB0+ECYXwfAhCp4Xh0xH5JvAN1Hr8r+/CNTIlJoKn5+ZISCaybYohgorMi2imcgMTzMly6bZCHZYPELMSrCBWKBXNnDeZJDprxFDDjqMwz6c06A/FVqyC84=
