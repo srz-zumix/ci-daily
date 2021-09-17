@@ -21,7 +21,6 @@ pipelines:
         configuration:
           inputResources:
             - name: ci_daily_gitRepo
-          inputResources:
             - name: ci_daily_cron_trigger
         execution:
           onExecute:
