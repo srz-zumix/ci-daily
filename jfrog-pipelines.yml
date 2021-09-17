@@ -1,0 +1,35 @@
+resources:
+  - name: ci_daily_gitRepo
+    type: GitRepo
+    configuration:
+      gitProvider: GitHub
+      path: srz-zumix/ci-daily
+      branches:
+        include: master|^feature/.*|^jfrog/.*
+  - name: ci_daily_cron_trigger
+    type: CronTrigger
+    configuration:
+      interval: '0 0 * * 2'
+
+pipelines:
+  - name: ci_daily_report
+    configuration:
+      nodePool: ubuntu-latest
+    steps:
+      - name: integromat
+        type: Bash
+        configuration:
+          inputResources:
+            - name: ci_daily_gitRepo
+            - name: ci_daily_cron_trigger
+          integrations:
+            - name: ci_daily_envs
+          environmentVariables:
+            INTEGROMAT_WEBHOOK_URL: ${int_ci_daily_envs_INTEGROMAT_WEBHOOK_URL}
+        execution:
+          onExecute:
+            - pushd ${res_ci_daily_gitRepo_resourcePath}
+            - git submodule update --init --recursive
+            - export CI_NAME=${JFROG_CLI_BUILD_URL//jfrog.io*/jfrog.io}
+            - .ci/integromat.sh
+            - popd
