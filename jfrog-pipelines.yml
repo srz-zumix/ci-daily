@@ -30,5 +30,6 @@ pipelines:
           onExecute:
             - pushd ${res_ci_daily_gitRepo_resourcePath}
             - git submodule update --init --recursive
+            - export CI_NAME=${JFROG_CLI_BUILD_URL//jfrog.io*/jfrog.io}
             - .ci/integromat.sh
             - popd
