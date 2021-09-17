@@ -1,0 +1,31 @@
+resources:
+  - name: ci_daily_gitRepo
+    type: GitRepo
+    configuration:
+      gitProvider: GitHub
+      path: srz-zumix/ci-daily
+      branches:
+        include: master|^feature/.*|^jfrog/.*
+  - name: ci_daily_cron_trigger
+    type: CronTrigger
+    configuration:
+      interval: '0 0 * * 2'
+
+pipelines:
+  - name: ci_daily_report
+    configuration:
+      nodePool: ubuntu-latest
+    steps:
+      - name: integromat
+        type: Bash
+        configuration:
+          inputResources:
+            - name: ci_daily_gitRepo
+          inputResources:
+            - name: ci_daily_cron_trigger
+        execution:
+          onExecute:
+            - pushd ${res_ci_daily_gitRepo_resourcePath}
+            - git submodule update --init --recursive
+            - .ci/integromat.sh
+            - popd
