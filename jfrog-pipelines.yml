@@ -22,6 +22,8 @@ pipelines:
           inputResources:
             - name: ci_daily_gitRepo
             - name: ci_daily_cron_trigger
+          integrations:
+            - name: ci_daily_envs
           environmentVariables:
             INTEGROMAT_WEBHOOK_URL: ${int_ci_daily_envs_INTEGROMAT_WEBHOOK_URL}
         execution:
