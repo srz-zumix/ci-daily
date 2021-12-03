@@ -14,11 +14,11 @@ workflows:
   daily:
     triggers:
       - schedule:
-        # Every day, 0423Z.
-        cron: "23 4 * * *"
-        filters:
-          branches:
-            only:
-              - main
+          # Every day, 0423Z.
+          cron: "23 4 * * *"
+          filters:
+            branches:
+              only:
+                - main
     jobs:
       - notify
