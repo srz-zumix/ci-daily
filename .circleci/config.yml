@@ -1,0 +1,22 @@
+jobs:
+  - notify:
+    machine: true
+    steps:
+      - checkout
+      - run: ./.ci/integromat.sh
+
+workflows:
+  default:
+    jobs:
+      - notify
+  daily:
+    triggers:
+      - schedule:
+        # Every day, 0423Z.
+        cron: "23 4 * * *"
+        filters:
+          branches:
+            only:
+              - main
+    jobs:
+      - notify
