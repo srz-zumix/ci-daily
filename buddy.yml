@@ -1,0 +1,24 @@
+- pipeline: "daily"
+  on: "SCHEDULE"
+  refs:
+  - "refs/heads/main"
+  priority: "NORMAL"
+  start_date: "2022-01-13T00:24:00Z"
+  delay: 1440
+  actions:
+  - action: "Execute: echo hello"
+    type: "BUILD"
+    working_directory: "/buddy/ci-daily"
+    docker_image_name: "library/ubuntu"
+    docker_image_tag: "18.04"
+    execute_commands:
+    - "./.ci/integromat.sh"
+    volume_mappings:
+    - "/:/buddy/ci-daily"
+    cache_base_image: true
+    shell: "BASH"
+  variables:
+  - key: "INTEGROMAT_WEBHOOK_URL"
+    value: "secure!Og5qG51IWucq7K8r2qvCqS9+kNjjezVFCKdl6AfVWdqAbvxT1X4lLBQc43DJHbYnZmw5FFMoQ+E+Rmrihbtauw==.P0LhEK3LBEYOYgUPSx+guw=="
+    type: "VAR"
+    encrypted: true
