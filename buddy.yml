@@ -3,7 +3,7 @@
   refs:
   - "refs/heads/main"
   priority: "NORMAL"
-  start_date: "2022-01-13T01:24:00Z"
+  start_date: "2022-01-13T00:24:00Z"
   delay: 1440
   actions:
   - action: "Execute: echo hello"
