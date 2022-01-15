@@ -18,7 +18,7 @@
     login: "srzzumix"
     password: "secure!SwqwXTS2hu5yZ8U8iHP4wA==.RsP9rSBPXjoy/WtdEwsesQ=="
     docker_image_name: "srzzumix/iutest_dev_env"
-    docker_image_tag: "latest"
+    docker_image_tag: "master"
     execute_commands:
     - "./.ci/integromat.sh"
     volume_mappings:
