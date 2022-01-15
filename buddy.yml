@@ -17,7 +17,7 @@
     working_directory: "/buddy/ci-daily"
     login: "srzzumix"
     password: "secure!SwqwXTS2hu5yZ8U8iHP4wA==.RsP9rSBPXjoy/WtdEwsesQ=="
-    docker_image_name: ""srzzumix/iutest_dev_env""
+    docker_image_name: "srzzumix/iutest_dev_env"
     docker_image_tag: "latest"
     execute_commands:
     - "./.ci/integromat.sh"
