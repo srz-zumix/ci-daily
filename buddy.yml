@@ -1,16 +1,24 @@
 - pipeline: "daily"
+  # on: "EVENT"
+  # events:
+  # - type: "PUSH"
+  #   refs:
+  #   - "refs/heads/master"
+  #   - "refs/heads/feature/buddy"
   on: "SCHEDULE"
   refs:
   - "refs/heads/main"
-  priority: "NORMAL"
   start_date: "2022-01-13T00:24:00Z"
   delay: 1440
+  priority: "NORMAL"
   actions:
   - action: "Execute: echo hello"
     type: "BUILD"
     working_directory: "/buddy/ci-daily"
-    docker_image_name: "library/ubuntu"
-    docker_image_tag: "18.04"
+    login: "srzzumix"
+    password: "secure!SwqwXTS2hu5yZ8U8iHP4wA==.RsP9rSBPXjoy/WtdEwsesQ=="
+    docker_image_name: "srzzumix/iutest_dev_env"
+    docker_image_tag: "master"
     execute_commands:
     - "./.ci/integromat.sh"
     volume_mappings:
