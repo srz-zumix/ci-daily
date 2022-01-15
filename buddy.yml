@@ -1,15 +1,15 @@
 - pipeline: "daily"
-  on: "EVENT"
-  events:
-  - type: "PUSH"
-    refs:
-    - "refs/heads/master"
-    - "refs/heads/feature/buddy"
-  # on: "SCHEDULE"
-  # refs:
-  # - "refs/heads/main"
-  # start_date: "2022-01-13T00:24:00Z"
-  # delay: 1440
+  # on: "EVENT"
+  # events:
+  # - type: "PUSH"
+  #   refs:
+  #   - "refs/heads/master"
+  #   - "refs/heads/feature/buddy"
+  on: "SCHEDULE"
+  refs:
+  - "refs/heads/main"
+  start_date: "2022-01-13T00:24:00Z"
+  delay: 1440
   priority: "NORMAL"
   actions:
   - action: "Execute: echo hello"
