@@ -1,0 +1,18 @@
+version: v2
+
+tasks:
+  daily:
+    steps:
+    - checkout
+    - commands:
+      - "./.ci/integromat.sh"
+
+trigger:
+  when: branch in ('master', 'develop') || branch =~ 'razorops.*'
+
+# Note:
+# workflows seems to be unsupported GitHub Checks
+workflows:
+  - name: daily
+    tasks:
+      - daily
