@@ -1,0 +1,16 @@
+version: v2
+
+tasks:
+  daily:
+    steps:
+    - checkout
+    - commands:
+      - "./.ci/integromat.sh"
+
+trigger:
+  when: branch in ('master', 'develop') || branch =~ 'razorops.*'
+
+workflows:
+  - name: daily
+    tasks:
+      - daily
