@@ -10,8 +10,6 @@ tasks:
 trigger:
   when: branch in ('master', 'develop') || branch =~ 'razorops.*'
 
-# Note:
-# workflows seems to be unsupported GitHub Checks
 workflows:
   - name: daily
     tasks:
